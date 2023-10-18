@@ -20,9 +20,10 @@ class Program
         //Console.WriteLine(v5[7]);
         v1.Normalize();
         Console.WriteLine(v1);
-
+        v3[1] = 6;
         double dot = v1 * v2;
         Vector3d v6 = 3 * v1;
         Console.WriteLine(v6);
+        Console.WriteLine(v3);
     }
 }

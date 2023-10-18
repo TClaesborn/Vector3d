@@ -36,9 +36,27 @@ public class Vector3d
                     throw new IndexOutOfRangeException();
             }
         }
+        set
+        {
+            switch(i)
+            {
+                case 0:
+                    X = value;
+                    break;
+                case 1:
+                    Y = value;
+                    break;
+                case 2:
+                    Z = value;
+                    break;
+                default:
+                    throw new IndexOutOfRangeException();
+            }
+        }
     }
 
     //Constructor (Overloads)
+    
     public Vector3d(double x, double y, double z)
     {
         X = x;
