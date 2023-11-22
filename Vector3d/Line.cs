@@ -43,8 +43,10 @@ class Line
         for (double t = 0; t <= 1; t += 0.01)
         {
             Point3d interpolatedPoint = Lerp(t);
+            
             int consoleX = (int)interpolatedPoint.X;
             int consoleY = (int)interpolatedPoint.Y;
+            
             Console.SetCursorPosition(consoleX, consoleY);
             Console.Write(sign);
         }
