@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
+#pragma warning disable CA1050
 public class Vector3d
 {
+#pragma warning restore CA1050
     public double X { get; set; }
     public double Y { get; set; }
     public double Z { get; set; }
@@ -24,17 +25,13 @@ public class Vector3d
     {
         get
         {
-            switch (i)
+            return i switch
             {
-                case 0:
-                    return X;
-                case 1:
-                    return Y;
-                case 2:
-                    return Z;
-                default:
-                    throw new IndexOutOfRangeException();
-            }
+                0 => X,
+                1 => Y,
+                2 => Z,
+                _ => throw new IndexOutOfRangeException(),
+            };
         }
         set
         {
@@ -125,6 +122,10 @@ public class Vector3d
     public static Vector3d operator *(double a, Vector3d b)
     {
         return new Vector3d(a*b.X, a*b.Y, a*b.Z);
+    }
+    public static Vector3d operator *(Vector3d b, double a)
+    {
+        return new Vector3d(a * b.X, a * b.Y, a * b.Z);
     }
 }
 
